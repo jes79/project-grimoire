@@ -3,62 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GRIMOIRE - Once Upon a Crime. 동화라는 건, 아름답게 기록된 범죄일 뿐이니까." />
+  <meta name="description" content="GRIMOIRE — Once Upon a Crime, Chapter I project archive." />
   <title>GRIMOIRE — Once Upon a Crime</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="grain"></div>
-  <header class="nav"><a href="#top" class="brand">G R I M O I R E</a><nav><a href="#world">WORLD</a><a href="#chapter">CHAPTER I</a><a href="#characters">CHARACTERS</a><a href="#archive">ARCHIVE</a></nav></header>
-
+  <header class="nav"><a href="#top" class="brand">G R I M O I R E</a><nav><a href="#play">PLAY</a><a href="#world">WORLD</a><a href="#characters">CHARACTERS</a><a href="#character-3d">3D</a><a href="#making">MAKING</a></nav></header>
   <main id="top">
     <section class="hero">
-      <div class="hero-art"></div>
-      <div class="hero-shade"></div>
-      <div class="hero-copy reveal">
-        <p class="eyebrow">PROJECT GRIMOIRE · CHAPTER I</p>
-        <h1>Once Upon<br><em>a Crime</em></h1>
-        <div class="rule"><span></span><i>✦</i><span></span></div>
-        <p class="tagline">동화라는 건, 아름답게 기록된 범죄일 뿐이니까.</p>
-        <a class="scroll-cue" href="#world">OPEN THE BOOK <b>↓</b></a>
-      </div>
-      <p class="hero-mark">01 / 04</p>
+      <div class="hero-art"></div><div class="hero-shade"></div>
+      <div class="hero-copy reveal"><p class="eyebrow">PROJECT GRIMOIRE · CHAPTER I</p><h1>Once Upon<br><em>a Crime</em></h1><div class="rule"><span></span><i>✦</i><span></span></div><p class="tagline">동화라는 건, 아름답게 기록된 범죄일 뿐이니까.</p><a class="scroll-cue" href="#play">WATCH THE CHAPTER <b>↓</b></a></div>
+      <p class="hero-mark">CHAPTER I / UNTRUTH</p>
     </section>
 
-    <section id="world" class="section intro">
-      <p class="eyebrow">THE WORLD OF GRIMOIRE</p>
-      <h2>비는 모든 것을 지우지만,<br><em>진실까지 지우지는 못한다.</em></h2>
-      <p class="lead">그림 시티. 연방 수사국의 그림자 아래, 9개의 동화가 9개의 범죄구역이 된 도시.<br>여기서 정의는 기록되는 방식에 따라 전혀 다른 얼굴을 갖는다.</p>
-      <div class="theme-grid">
-        <article><span class="number">01</span><h3>UnTruth</h3><p>누구나 알고 있다고 믿는 동화와 정의, 기억을 뒤집는 이야기.</p></article>
-        <article><span class="number">02</span><h3>Grimm City</h3><p>늘 비가 내리는, 국가가 관리하고 묵인하는 범죄도시.</p></article>
-        <article><span class="number">03</span><h3>The Mirror</h3><p>진실을 비추면서 동시에 모든 것을 뒤집는, 도로시의 질문.</p></article>
+    <section id="play" class="section play-section">
+      <p class="eyebrow">CHAPTER I · PLAYABLE ARCHIVE</p><h2>문서가 아니라,<br><em>플레이로 남긴 첫 장.</em></h2>
+      <p class="lead">현재 완성된 챕터 1의 실제 플레이 기록입니다. 타이틀부터 거리 탐험, 전투, 캐릭터 연출까지 하나의 플레이 흐름으로 확인할 수 있습니다.</p>
+      <div class="player-shell"><video id="feature-video" controls playsinline preload="metadata" poster="assets/posters/title-intro.jpg"><source src="assets/video/title-intro.mp4" type="video/mp4">이 브라우저는 영상을 재생할 수 없습니다.</video><div class="player-caption"><span id="clip-number">01 / 05</span><strong id="clip-title">TITLE &amp; INTRO</strong><p id="clip-description">GRIMOIRE의 타이틀과 챕터 1의 시작.</p></div></div>
+      <div class="clip-grid" role="list">
+        <button class="clip active" data-video="assets/video/title-intro.mp4" data-poster="assets/posters/title-intro.jpg" data-title="TITLE & INTRO" data-description="GRIMOIRE의 타이틀과 챕터 1의 시작."><img src="assets/posters/title-intro.jpg" alt="타이틀 화면 영상"><span>01 · TITLE</span></button>
+        <button class="clip" data-video="assets/video/street-exploration.mp4" data-poster="assets/posters/street-exploration.jpg" data-title="ROUGE DISTRICT" data-description="네온 간판과 모듈형 건물로 구성한 챕터 1 거리 탐험."><img src="assets/posters/street-exploration.jpg" alt="거리 탐험 영상"><span>02 · STREET</span></button>
+        <button class="clip" data-video="assets/video/combat-showcase.mp4" data-poster="assets/posters/combat-showcase.jpg" data-title="COMBAT SHOWCASE" data-description="골목 구간에서 진행되는 실제 전투 플레이."><img src="assets/posters/combat-showcase.jpg" alt="전투 플레이 영상"><span>03 · COMBAT</span></button>
+        <button class="clip" data-video="assets/video/cinematic-dorothy.mp4" data-poster="assets/posters/cinematic-dorothy.jpg" data-title="DOROTHY CUTSCENE" data-description="도로시의 시선으로 시작하는 챕터 연출."><img src="assets/posters/cinematic-dorothy.jpg" alt="도로시 컷신 영상"><span>04 · DOROTHY</span></button>
+        <button class="clip" data-video="assets/video/chapter-cutscene.mp4" data-poster="assets/posters/chapter-cutscene.jpg" data-title="CHAPTER CUTSCENE" data-description="챕터 1의 이야기와 인물 관계를 보여주는 컷신."><img src="assets/posters/chapter-cutscene.jpg" alt="챕터 컷신 영상"><span>05 · CUTSCENE</span></button>
       </div>
     </section>
 
-    <section class="colour-section"><div class="colour-image"></div><div class="colour-panel"><p class="eyebrow">COLOUR LANGUAGE</p><h2>색은 선택을<br>기억한다.</h2><p>보라는 직시, 빨강은 부정, 파랑은 도피, 초록은 죽음을 뜻한다. GRIMOIRE의 세계는 인물들의 선택을 색으로 먼저 말한다.</p><div class="swatches"><span><i class="purple"></i>TRUTH</span><span><i class="red"></i>DENIAL</span><span><i class="blue"></i>ESCAPE</span><span><i class="green"></i>DEATH</span></div></div></section>
+    <section id="world" class="section intro"><p class="eyebrow">THE WORLD OF GRIMOIRE</p><h2>비는 모든 것을 지우지만,<br><em>진실까지 지우지는 못한다.</em></h2><p class="lead">그림 시티. 연방 수사국의 그림자 아래, 9개의 동화가 9개의 범죄구역이 된 도시. 챕터 1은 그 도시의 가장 낮은 골목, 루주 디스트릭트에서 시작됩니다.</p><div class="theme-grid"><article><span class="number">01</span><h3>UnTruth</h3><p>누구나 알고 있다고 믿는 동화와 정의, 기억을 뒤집는 이야기.</p></article><article><span class="number">02</span><h3>Grimm City</h3><p>늘 비가 내리는, 국가가 관리하고 묵인하는 범죄도시.</p></article><article><span class="number">03</span><h3>Chapter I</h3><p>빨간 망토가 남긴 흔적에서 시작되는 첫 번째 사건.</p></article></div></section>
 
-    <section id="chapter" class="section chapter">
-      <p class="eyebrow">CHAPTER I · ROUGE DISTRICT</p>
-      <h2>첫 번째 페이지,<br><em>빨간 망토가 남긴 흔적.</em></h2>
-      <p class="lead">챕터 1은 그림 시티의 문을 여는 구간입니다. 비에 젖은 거리와 네온사인, 폐쇄된 골목 속에서 도로시는 ‘정의’라 믿어온 이야기의 균열을 처음 마주합니다.</p>
-      <div class="chapter-layout"><figure class="large-art"><img src="assets/world/image3.png" alt="GRIMOIRE chapter environment"><figcaption>GRIMM CITY / NIGHT DISTRICT</figcaption></figure><div class="chapter-notes"><div><b>SETTING</b><p>비와 네온, 철문과 간판이 만든 수직적인 거리.</p></div><div><b>MOOD</b><p>아름답지만 불온한 동화의 도시.</p></div><div><b>ENCOUNTER</b><p>도로시가 마주하는 첫 번째 거울, 루주후드.</p></div></div></div>
-      <div class="art-strip"><img src="assets/world/image46.png" alt="environment art"><img src="assets/world/image47.png" alt="environment art"><img src="assets/world/image48.png" alt="environment art"></div>
+    <section class="city-showcase"><figure><img src="assets/world/image1.png" alt="실제 게임 내 그림 시티 거리"><figcaption>IN-GAME / ROUGE DISTRICT</figcaption></figure><div><p class="eyebrow">THE PLAYABLE CITY</p><h2>걸어 들어갈 수 있는<br>그림 시티.</h2><p>컨셉을 한 장의 이미지에 멈추지 않고, 플레이어가 직접 이동하고 전투하며 탐색하는 거리로 구현했습니다. 건물·간판·벽면·펜스는 하나의 구역 안에서 리듬을 만들도록 배치했습니다.</p></div></section>
+
+    <section id="characters" class="characters"><div class="character-heading"><p class="eyebrow">CHARACTER ARCHIVE</p><h2>이야기를 뒤집는<br><em>두 개의 시선.</em></h2><p>챕터 1을 여는 도로시와 루주후드. 완성 일러스트와 디자인 시트를 함께 전시합니다.</p></div><div class="character-card dorothy"><div class="char-copy"><p class="eyebrow">THE INVESTIGATOR</p><h3>Dorothy</h3><p class="korean">도로시</p><p>진실을 보려는 자. 그녀가 믿어온 정의는 정말 정의였을까. 보라색은 도로시가 끝내 마주해야 할 답을 암시합니다.</p><button data-modal="dorothy-design">DESIGN SHEET <span>↗</span></button></div><img class="char-main" src="assets/characters/802fee390fb9321e.png" alt="도로시 완성 일러스트"></div><div class="character-card rouge"><img class="char-main" src="assets/characters/997eaf7651ee4083.png" alt="루주후드 완성 일러스트"><div class="char-copy"><p class="eyebrow">THE RED HOOD</p><h3>Rouge Hood</h3><p class="korean">루주후드</p><p>상실을 부정하고 계승한 자. 붉은 망토는 유품이며, 그 선명한 색은 그녀가 버리지 못한 현실을 드러냅니다.</p><button data-modal="rouge-design">DESIGN SHEET <span>↗</span></button></div></div></section>
+
+    <section id="character-3d" class="section character-3d">
+      <p class="eyebrow">CHARACTER MODELING · IN GAME</p><h2>그림을 넘어,<br><em>게임 안에서 움직이는 인물.</em></h2>
+      <p class="lead">컨셉을 3D 캐릭터로 해석하고, 모델링·텍스처·리깅·Unity 적용을 거쳐 실제 플레이 씬에 연결했습니다. 아래 이미지는 제작 과정과 완성 렌더를 정리한 캐릭터 아카이브입니다.</p>
+      <div class="model-intro-grid"><article class="model-profile player-profile"><img src="assets/character3d/player-overview.jpg" alt="도로시 3D 캐릭터 완성 시트"><div><p class="eyebrow">PLAYER CHARACTER</p><h3>Dorothy · 3D</h3><p>보라색 실루엣, 의상 레이어, 표정과 머리카락의 리듬까지. 2D 원화의 인상을 플레이어 캐릭터로 옮겼습니다.</p><button data-modal="player-model-sheet">VIEW MODEL SHEET <span>↗</span></button></div></article><article class="model-profile boss-profile"><img src="assets/character3d/boss-overview.jpg" alt="루주후드 3D 보스 캐릭터 완성 시트"><div><p class="eyebrow">CHAPTER I BOSS</p><h3>Rouge Hood · 3D</h3><p>붉은 망토의 대비와 공격적인 실루엣을 중심으로 설계한 챕터 1 보스 캐릭터입니다.</p><button data-modal="boss-model-sheet">VIEW MODEL SHEET <span>↗</span></button></div></article></div>
+      <div class="model-gallery"><button class="model-shot" data-modal="player-spring-sheet"><img src="assets/character3d/player-spring.jpg" alt="도로시 스프링 본과 머리카락 작업"><span><b>PLAYER · RIGGING</b><small>스프링 본과 머리카락 작업</small></span></button><button class="model-shot" data-modal="player-renders-sheet"><img src="assets/character3d/player-renders.jpg" alt="도로시 3D 완성 렌더"><span><b>PLAYER · FINAL RENDER</b><small>완성 캐릭터 포즈</small></span></button><button class="model-shot" data-modal="boss-model-sheet"><img src="assets/character3d/boss-model.jpg" alt="루주후드 모델링 작업"><span><b>BOSS · MODELING</b><small>형태와 의상 디테일</small></span></button><button class="model-shot" data-modal="boss-unity-sheet"><img src="assets/character3d/boss-unity.jpg" alt="루주후드 Unity 적용 작업"><span><b>BOSS · UNITY &amp; SHADER</b><small>셰이더 그래프 적용</small></span></button></div>
+      <div class="character-pipeline"><span>CONCEPT ART</span><i>→</i><span>3D MODELING</span><i>→</i><span>TEXTURE &amp; RIG</span><i>→</i><span>UNITY INTEGRATION</span><i>→</i><span>PLAYABLE CHARACTER</span></div>
     </section>
-
-    <section id="characters" class="characters">
-      <div class="character-heading"><p class="eyebrow">CHARACTER ARCHIVE</p><h2>이야기를 뒤집는<br><em>두 개의 시선.</em></h2><p>완성 일러스트와 디자인 언어를 중심으로, 챕터 1을 여는 두 인물을 전시합니다.</p></div>
-      <div class="character-card dorothy"><div class="char-copy"><p class="eyebrow">THE INVESTIGATOR</p><h3>Dorothy</h3><p class="korean">도로시</p><p>진실을 보려는 자. 그녀가 믿어온 정의는 정말 정의였을까. 보라색은 도로시가 끝내 마주해야 할 답을 암시한다.</p><button data-modal="dorothy-design">DESIGN SHEET <span>↗</span></button></div><img class="char-main" src="assets/characters/802fee390fb9321e.png" alt="Dorothy character illustration"></div>
-      <div class="character-card rouge"><img class="char-main" src="assets/characters/997eaf7651ee4083.png" alt="Rouge Hood character illustration"><div class="char-copy"><p class="eyebrow">THE RED HOOD</p><h3>Rouge Hood</h3><p class="korean">루주후드</p><p>상실을 부정하고 계승한 자. 붉은 망토는 유품이며, 그 선명한 색은 그녀가 버리지 못한 현실을 드러낸다.</p><button data-modal="rouge-design">DESIGN SHEET <span>↗</span></button></div></div>
+    <section id="making" class="section making"><p class="eyebrow">MAKING CHAPTER I</p><h2>아트와 코드가 함께<br><em>도시를 완성하는 방식.</em></h2><p class="lead">보여주기 위한 정적 이미지가 아니라, 실제 플레이 씬을 만들기 위해 준비한 3D 에셋·환경 구성·프로그램 작업입니다.</p><div class="making-grid"><article class="making-card feature"><img src="assets/world/image55.png" alt="3D 건물 모듈 모델"><div><b>3D ENVIRONMENT</b><h3>Modular Building Kit</h3><p>반복 가능한 건물 모듈을 기반으로 거리의 높이와 상점 구성을 확장했습니다.</p></div></article><article class="making-card"><img src="assets/world/image56.png" alt="게임 간판 그래픽"><div><b>PROP &amp; SIGNBOARD</b><h3>Street Identity</h3><p>상점 간판, 그래피티, 표지판으로 루주 디스트릭트의 구역성을 만들었습니다.</p></div></article><article class="making-card"><img src="assets/world/image63.png" alt="도시 환경 구성"><div><b>LEVEL COMPOSITION</b><h3>Playable Street</h3><p>플레이 동선 안에서 전투·탐험·연출이 이어지도록 환경을 구성했습니다.</p></div></article></div>
+      <div class="program-panel"><div><p class="eyebrow">PROGRAMMING</p><h2>장면을 움직이는<br>게임 시스템.</h2><p>챕터 1의 실제 플레이를 위해 환경 배치와 재질, 상호작용 장면을 연결했습니다.</p></div><div class="system-list"><article><span>01</span><div><b>BUILDING GENERATOR</b><p>건물 모듈과 스타일 값을 조합해 거리의 반복을 줄이고 구역별 변화를 만듭니다.</p></div></article><article><span>02</span><div><b>MATERIAL &amp; LIGHTING</b><p>창문 발광, 간판 조명, 오염도와 색감으로 비 내리는 야간 분위기를 조절합니다.</p></div></article><article><span>03</span><div><b>STREET ASSEMBLY</b><p>펜스·케이블·간판·데칼을 레벨 안에 배치해 플레이 가능한 거리의 밀도를 완성합니다.</p></div></article></div></div>
     </section>
-
-    <section id="archive" class="section archive"><p class="eyebrow">MAKING THE CITY</p><h2>한 장의 동화를,<br><em>걸어 들어갈 수 있는 도시로.</em></h2><p class="lead">컨셉에서 레벨, 네온 간판과 건물 모듈까지. GRIMOIRE의 챕터 1은 ‘동화의 외피를 쓴 범죄도시’라는 하나의 감각을 향해 쌓였습니다.</p><div class="archive-grid"><figure class="wide"><img src="assets/world/image49.png" alt="GRIMOIRE city environment"><figcaption>ENVIRONMENT / CITY VIEW</figcaption></figure><figure><img src="assets/world/image50.png" alt="GRIMOIRE environment"><figcaption>LEVEL / STREET</figcaption></figure><figure><img src="assets/world/image51.png" alt="GRIMOIRE environment"><figcaption>ASSET / ARCHITECTURE</figcaption></figure><figure><img src="assets/world/image55.png" alt="GRIMOIRE environment"><figcaption>LIGHTING / NIGHT</figcaption></figure><figure><img src="assets/world/image56.png" alt="GRIMOIRE environment"><figcaption>VISUAL LANGUAGE</figcaption></figure></div></section>
+    <section class="cover-band"><img src="assets/cover-art.png" alt="Once Upon A Crime 프로젝트 아트북 표지"><div><p class="eyebrow">PROJECT ART BOOK</p><h2>Once Upon<br><em>a Crime</em></h2><p>GRIMOIRE · CHAPTER I · DEVELOPMENT ARCHIVE</p></div></section>
   </main>
   <footer><p>GRIMOIRE</p><span>PROJECT ARCHIVE · CHAPTER I</span><small>© Team GRIMOIRE</small></footer>
-  <dialog id="dorothy-design"><button class="close">×</button><img src="assets/characters/73885351c3ced1da.png" alt="Dorothy design sheet"></dialog>
-  <dialog id="rouge-design"><button class="close">×</button><img src="assets/characters/2adfa558dba14109.png" alt="Rouge Hood design sheet"></dialog>
+  <dialog id="dorothy-design"><button class="close" aria-label="닫기">×</button><img src="assets/characters/73885351c3ced1da.png" alt="도로시 디자인 시트"></dialog><dialog id="rouge-design"><button class="close" aria-label="닫기">×</button><img src="assets/characters/2adfa558dba14109.png" alt="루주후드 디자인 시트"></dialog>
+  <dialog id="player-model-sheet"><button class="close" aria-label="닫기">×</button><img src="assets/character3d/player-overview.jpg" alt="도로시 3D 캐릭터 완성 시트"></dialog><dialog id="player-spring-sheet"><button class="close" aria-label="닫기">×</button><img src="assets/character3d/player-spring.jpg" alt="도로시 스프링 본과 머리카락 작업"></dialog><dialog id="player-renders-sheet"><button class="close" aria-label="닫기">×</button><img src="assets/character3d/player-renders.jpg" alt="도로시 3D 캐릭터 완성 렌더"></dialog><dialog id="boss-model-sheet"><button class="close" aria-label="닫기">×</button><img src="assets/character3d/boss-model.jpg" alt="루주후드 3D 모델링 작업"></dialog><dialog id="boss-unity-sheet"><button class="close" aria-label="닫기">×</button><img src="assets/character3d/boss-unity.jpg" alt="루주후드 Unity와 셰이더 그래프 적용 작업"></dialog>
   <script src="script.js"></script>
 </body></html>
