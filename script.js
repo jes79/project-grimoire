@@ -26,3 +26,19 @@ if (shots.length) {
   shots.forEach((shot,i) => { shot.classList.remove('active'); shot.addEventListener('click', () => { show(i); reset(); }); thumbs.append(shot); });
   const reset = () => { clearInterval(timer); timer = setInterval(() => show(current + 1), 4500); }; show(0); reset();
 }
+
+document.querySelectorAll('.showcase-slider').forEach(slider => {
+  const shots = [...slider.querySelectorAll('.showcase-shot')];
+  if (!shots.length) return;
+  const stage = document.createElement('div'); stage.className = 'showcase-stage';
+  const image = document.createElement('img'); const copy = document.createElement('div');
+  const heading = document.createElement('b'); const caption = document.createElement('p');
+  copy.append(heading, caption); stage.append(image, copy);
+  const thumbs = document.createElement('div'); thumbs.className = 'showcase-thumbs';
+  slider.replaceChildren(stage, thumbs);
+  let current = 0, timer;
+  const show = i => { current = (i + shots.length) % shots.length; const shot = shots[current]; image.src = shot.querySelector('img').src; image.alt = shot.querySelector('img').alt; heading.textContent = shot.querySelector('b').textContent; caption.textContent = shot.querySelector('small').textContent; [...thumbs.children].forEach((thumb, index) => thumb.classList.toggle('active', index === current)); };
+  const reset = () => { clearInterval(timer); timer = setInterval(() => show(current + 1), 4500); };
+  shots.forEach((shot, index) => { shot.addEventListener('click', () => { show(index); reset(); }); thumbs.append(shot); });
+  show(0); reset();
+});
