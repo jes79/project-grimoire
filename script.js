@@ -10,3 +10,7 @@ document.querySelectorAll('.showcase').forEach(gallery => {
   buttons.forEach((button, index) => button.addEventListener('click', () => select(index)));
   setInterval(() => select((current + 1) % buttons.length), 5000);
 });
+const pages=[...document.querySelectorAll('.plan-page')], count=document.querySelector('.plan-count'); let page=0;
+const showPage=next=>{page=(next+pages.length)%pages.length;pages.forEach((item,i)=>item.classList.toggle('active',i===page));count.textContent=`${String(page+1).padStart(2,'0')} / ${String(pages.length).padStart(2,'0')}`};
+document.querySelector('.plan-arrow.prev')?.addEventListener('click',()=>showPage(page-1));
+document.querySelector('.plan-arrow.next')?.addEventListener('click',()=>showPage(page+1));
