@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="refresh.css" />
 </head>
 <body>
-  <header class="nav"><a class="brand" href="#top">G R I M O I R E</a><nav><a href="#plan">기획</a><a href="#play">영상</a><a href="#world">배경</a><a href="#characters">캐릭터</a><a href="#modeling">3D 모델링</a><a href="#systems">프로그램</a></nav></header>
+  <header class="nav"><a class="brand" href="#top">G R I M O I R E</a><nav><a href="#plan">기획</a><a href="#play">영상</a><a href="#world">배경</a><a href="#characters">캐릭터</a><a href="#modeling">3D 모델링</a><a href="#systems">프로그램</a><a href="#qa">QA</a></nav></header>
   <main id="top">
     <section class="hero"><div class="hero-art" aria-hidden="true"></div><div class="hero-rain" aria-hidden="true"></div><div class="hero-shards" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="hero-shade"></div><div class="hero-copy"><p class="eyebrow">TEAM PROJECT · CHAPTER I</p><h1>G R I M O I R E</h1><p class="hero-subtitle">Once Upon a Crime</p><p class="hero-quote">동화라는 건, 아름답게 기록된 범죄일 뿐이니까.</p><a href="#plan">OPEN THE BOOK <span>↓</span></a></div><p class="hero-credit">PROJECT ART BOOK · 2026</p></section>
 
@@ -65,6 +65,31 @@
         </div>
       </div>
       <div class="systems-grid"><article><span>01</span><h3>PLAYER ACTION</h3><p>이동 · 점프 · 낙하 · 대시 · 공격 · 패링 · 피격 · 회복 · 사망</p><small>Player FSM / Input System</small></article><article><span>02</span><h3>SKILL SYSTEM</h3><p>3개 슬롯 · 액티브/패시브 · 투사체 · 범위 공격 · 무기 비주얼</p><small>ScriptableObject · MVP 구조</small></article><article><span>03</span><h3>BOSS BATTLE</h3><p>상태 전환 · 패턴 조합 · 공격 예고 · 그로기 · 카메라 흔들림</p><small>FSM + Behavior Tree</small></article><article><span>04</span><h3>MONSTER AI</h3><p>근접형 · 원거리형 · 매복 원거리형 · 자폭 비행형</p><small>Ground / Flying AI</small></article><article><span>05</span><h3>STAGE FLOW</h3><p>체크포인트 · 회복 · 저장 · 리스폰 · 웨이브 디펜스 · 보스 포탈</p><small>Field → Boss Transition</small></article><article><span>06</span><h3>UI &amp; FEEDBACK</h3><p>타이틀 · HUD · 스킬 장착 · 일시정지 · 레벨업 · 게임오버 · 페이드</p><small>Screen · Overlay · Popup</small></article></div>
+    </section>
+
+    <section id="qa" class="section qa">
+      <div class="qa-heading"><p class="eyebrow">07 · QUALITY ASSURANCE</p><h2>정상 동작보다 먼저,<br><em>무너지는 조건을 찾다.</em></h2><p class="lead">QA는 각 기능의 “완료”를 확인하는 마지막 단계가 아니라, 화면·입력·데이터가 만나는 경계를 함께 설계하고 검증하는 파트입니다.</p></div>
+      <div class="qa-dashboard">
+        <div class="qa-console-head"><span class="qa-status"></span><b>QA VALIDATION DESK</b><small>STATE · INPUT · DATA</small></div>
+        <div class="qa-axis">
+          <button class="qa-axis-card active" data-qa="state"><span>01</span><b>STATE</b><small>화면 · 계층 · 전환</small></button>
+          <button class="qa-axis-card" data-qa="input"><span>02</span><b>INPUT</b><small>우선순위 · 차단 · 복귀</small></button>
+          <button class="qa-axis-card" data-qa="data"><span>03</span><b>DATA</b><small>값 · 표시 · 동기화</small></button>
+        </div>
+        <div class="qa-workspace">
+          <div class="qa-case-copy">
+            <span id="qa-kicker">TEST AXIS / 01</span><h3 id="qa-title">화면이 겹쳐도,<br>규칙은 흔들리지 않는다.</h3><p id="qa-description">타이틀·인게임 같은 기본 화면과 일시정지·레벨업 오버레이, 확인 팝업이 겹치는 순간을 재현합니다. 전환 전의 화면이 남아 있지 않는지, 계층 규칙이 유지되는지를 확인합니다.</p>
+            <dl><div><dt>TEST POINT</dt><dd id="qa-point">Screen → Overlay → Popup</dd></div><div><dt>EXPECTED</dt><dd id="qa-expected">이전 화면 정리 · 계층 우선순위 유지</dd></div></dl>
+          </div>
+          <div class="qa-simulator" id="qa-simulator">
+            <div class="qa-grid"></div><div class="qa-screen">IN GAME<span>SCREEN</span></div><div class="qa-overlay">PAUSE<span>OVERLAY</span></div><div class="qa-popup">CONFIRM<span>POPUP</span></div>
+            <p class="qa-readout">CURRENT CHECK <strong id="qa-readout">STATE STACK VERIFIED</strong></p>
+            <div class="qa-progress"><span>CASE RUN</span><i><em id="qa-progress-fill"></em></i><b id="qa-progress-value">01 / 03</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-method"><article><span>01</span><h3>위험 기반 우선순위</h3><p>화면 전환 · 입력 충돌 · 비동기 타이밍처럼 플레이 경험을 무너뜨릴 가능성이 큰 조건부터 검증 순서를 설계합니다.</p></article><article><span>02</span><h3>재현 가능한 결함 보고</h3><p>재현 조건, 기대 결과, 실제 결과, 증빙을 함께 남겨 개발 파트가 같은 문제를 같은 조건에서 확인할 수 있게 합니다.</p></article><article><span>03</span><h3>회귀 테스트 환경</h3><p>수정이 다른 기능을 다시 흔들지 않도록, 핵심 UI 상태와 데이터 흐름을 반복 확인하는 기준을 축적합니다.</p></article></div>
+      <div class="team-photo-placeholder"><span>UP NEXT · TEAM GRIMOIRE</span><h3>함께 만든<br>한 권의 기록.</h3><p>다음 섹션에는 프로젝트를 완성한 팀의 사진과 크레딧이 들어갑니다.</p><div class="photo-frame"><i></i><b>TEAM PHOTO</b><i></i></div></div>
     </section>
   </main><footer><strong>GRIMOIRE</strong><span>PROJECT ARCHIVE · CHAPTER I</span><small>© Team GRIMOIRE</small></footer><script src="script.js"></script>
 </body></html>
