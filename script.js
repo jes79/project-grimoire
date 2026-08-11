@@ -1,44 +1,12 @@
-document.querySelectorAll('[data-modal]').forEach(button => button.addEventListener('click', () => document.getElementById(button.dataset.modal).showModal()));
-document.querySelectorAll('dialog').forEach(dialog => { dialog.querySelector('.close').addEventListener('click', () => dialog.close()); dialog.addEventListener('click', e => { if(e.target === dialog) dialog.close(); }); });
-const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); }), {threshold:.12});
-document.querySelectorAll('.section, .character-card, .city-showcase, .cover-band').forEach(el => observer.observe(el));
-const video = document.getElementById('feature-video');
-const number = document.getElementById('clip-number');
-const title = document.getElementById('clip-title');
-const description = document.getElementById('clip-description');
-document.querySelectorAll('.clip').forEach((clip, index) => clip.addEventListener('click', () => {
-  document.querySelectorAll('.clip').forEach(item => item.classList.remove('active'));
-  clip.classList.add('active'); video.pause(); video.poster = clip.dataset.poster; video.src = clip.dataset.video; video.load(); video.play().catch(() => {});
-  number.textContent = `${String(index + 1).padStart(2, '0')} / 05`; title.textContent = clip.dataset.title; description.textContent = clip.dataset.description;
+const video = document.querySelector('#main-video');
+const videoTitle = document.querySelector('#video-title');
+document.querySelectorAll('[data-video]').forEach(tab => tab.addEventListener('click', () => {
+  document.querySelectorAll('[data-video]').forEach(item => item.classList.remove('active'));
+  tab.classList.add('active'); video.pause(); video.src = tab.dataset.video; video.load(); videoTitle.textContent = tab.dataset.title;
 }));
-
-const shots = [...document.querySelectorAll('.model-shot')];
-if (shots.length) {
-  const slider = document.querySelector('.model-slider');
-  const stage = document.createElement('div'); stage.className = 'model-stage';
-  const image = document.createElement('img'); const copy = document.createElement('div');
-  const title3d = document.createElement('b'); const caption = document.createElement('p');
-  copy.append(title3d, caption); stage.append(image, copy);
-  const thumbs = document.createElement('div'); thumbs.className = 'model-thumbs';
-  slider.replaceChildren(stage, thumbs);
-  let current = 0, timer;
-  const show = i => { current = (i + shots.length) % shots.length; const shot = shots[current]; image.src = shot.querySelector('img').src; image.alt = shot.querySelector('img').alt; title3d.textContent = shot.querySelector('b').textContent; caption.textContent = shot.querySelector('small').textContent; [...thumbs.children].forEach((t,n)=>t.classList.toggle('active',n===current)); };
-  shots.forEach((shot,i) => { shot.classList.remove('active'); shot.addEventListener('click', () => { show(i); reset(); }); thumbs.append(shot); });
-  const reset = () => { clearInterval(timer); timer = setInterval(() => show(current + 1), 4500); }; show(0); reset();
-}
-
-document.querySelectorAll('.showcase-slider').forEach(slider => {
-  const shots = [...slider.querySelectorAll('.showcase-shot')];
-  if (!shots.length) return;
-  const stage = document.createElement('div'); stage.className = 'showcase-stage';
-  const image = document.createElement('img'); const copy = document.createElement('div');
-  const heading = document.createElement('b'); const caption = document.createElement('p');
-  copy.append(heading, caption); stage.append(image, copy);
-  const thumbs = document.createElement('div'); thumbs.className = 'showcase-thumbs';
-  slider.replaceChildren(stage, thumbs);
-  let current = 0, timer;
-  const show = i => { current = (i + shots.length) % shots.length; const shot = shots[current]; image.src = shot.querySelector('img').src; image.alt = shot.querySelector('img').alt; heading.textContent = shot.querySelector('b').textContent; caption.textContent = shot.querySelector('small').textContent; [...thumbs.children].forEach((thumb, index) => thumb.classList.toggle('active', index === current)); };
-  const reset = () => { clearInterval(timer); timer = setInterval(() => show(current + 1), 4500); };
-  shots.forEach((shot, index) => { shot.addEventListener('click', () => { show(index); reset(); }); thumbs.append(shot); });
-  show(0); reset();
+document.querySelectorAll('.showcase').forEach(gallery => {
+  const image = gallery.querySelector('.stage img'); const caption = gallery.querySelector('figcaption'); const buttons = [...gallery.querySelectorAll('[data-src]')]; let current = 0;
+  const select = index => { current = index; const button = buttons[index]; image.src = button.dataset.src; image.alt = button.querySelector('img').alt; caption.textContent = button.dataset.caption; buttons.forEach(b => b.classList.remove('selected')); button.classList.add('selected'); };
+  buttons.forEach((button, index) => button.addEventListener('click', () => select(index)));
+  setInterval(() => select((current + 1) % buttons.length), 5000);
 });
